@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %} 
+<link rel="stylesheet" href="{% static '/scss/userprofile/signup.css' %}" type="text/css">
+
+<div class="page-cover">
+    <h1>Lag bruker</h1>
+</div>
+
+<form id="signUpForm" method="post">      
+    {% csrf_token %}
+    <strong id="signupFormRequire">Nødvendig. 150 tegn eller færre. Bare bokstaver, sifre og @.+-_</strong>
+    <br>
+    <label for="id_username">Brukernavn</label>
+    {{ form.username }}
+        <div id="signUpFormErrors">{{ form.username.errors }}</div>
+        <label for="id_first_name">Fornavn</label>
+        {{ form.first_name }}
+        <div id="signUpFormErrors">{{ form.first_name.errors }}</div>
+        <label for="id_last_name">Etternavn</label>
+        {{ form.last_name }}
+        <div id="signUpFormErrors">{{ form.last_name.errors }}</div>
+        <label for="id_email">Epost</label>
+        {{ form.email }}
+        <div id="signUpFormErrors">{{ form.email.errors }}</div>
+        <label for="id_password1">Passord</label>
+        {{ form.password1 }}
+        <ul id="signUpFormPasswordRequire">
+            <li>Passordet ditt kan ikke være for likt den andre personlige informasjonen din.</li>
+            <li>Passordet ditt må inneholde minst 8 tegn.</li>
+            <li>Passordet ditt kan ikke være et lett passord.</li>
+            <li>Passordet ditt kan ikke være helt numerisk.</li>
+            </ul>
+        <div id="signUpFormErrors">{{ form.password2.errors }}</div>
+        <label for="id_password1">Gjenta passord</label>
+        {{ form.password2 }}
+        <br>
+        <div id="submit">
+            <button id="signUpFormButton">Lag Bruker</button>
+        </div>
+</form>
+ 
+{% endblock %}

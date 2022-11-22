@@ -1,0 +1,150 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static '/scss/store/footer.css' %}" type="text/css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
+
+<div id="mobileFooter">
+    <div class="content">
+        <div class="links">
+            <a href="">Terms of service</a>
+            <a href="">Policy</a>
+            <a href="">Customer service<i class="fa-solid fa-caret-down"></i></a>
+        </div>
+        <hr>
+        <div class="bottom-row">
+            <div class="copyright">&#169; Copyright 2022</div>
+            <div class="social-icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-tiktok"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div id="footerSection">
+    <div id="footerColLeft">
+        <div class="footerLinksDiv1">
+            <div id="footerLinks1">
+                <h1>Hjelp</h1>
+                <ul>
+                    <li>
+                        <a href="/hjelp-meg">Veiledning</a>
+                        <a href="/refunds">Retur</a>
+                        <a href="/faq">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="footerLinks2">
+          <h1>Policy</h1>
+          <ul>
+              <li>
+                  <a href="/tjenester">Tjenester</a>
+                  <a href="/copyright-stellcare">Copyright</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footerLinksDiv2">
+        <div id="footerLinks3">
+            <h1>Meny</h1>
+            <ul>
+                <li>
+                    <a href="/">Hjemme</a>
+                    <a href="/om">Om oss</a>
+                    <a href="/kundeservice">Kundeservice</a>
+                    <a href="/blog">Blogg</a>
+                    {% if request.user.is_authenticated %}
+                    <a href="/min-bruker">Min Bruker</a>
+                    <a href="/logg-ut">Logg Ut</a>
+                    {% else %}
+                    <a href="/lag-bruker">Lag Bruker</a>
+                    <a href="/logg-in">Logg Inn</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        <div id="footerLinks4">
+            <h1>Butikk</h1>
+            <ul>
+                <li>
+                    <a href="/category/:33/">KATEGORI</a>
+                    <a href="">KATEGORI</a>
+                    <a href="">KATEGORI</a>
+                    <a href="">KATEGORI</a>
+                    <a href="">KATEGORI</a>
+                    <a href="">KATEGORI</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div id="footerColRight">
+        <div class="social" id="socialIcons">
+            <i class="fab fa-facebook"></i>  
+            <i  class="fab fa-pinterest"></i>  
+            <i onclick="window.location.href='https://www.instagram.com/stellcare/'" class="fab fa-instagram"></i>
+          </div>
+        <div id="newsletter">
+            <h1>Bli medlem av StellCare</h1>
+            <form v-on:submit.prevent="onSubmit">
+                <div class="field has-addons">
+                    <div class="control">
+                        <input type="email" v-model="email" name="email" class="input" placeholder="Din epost">
+                        <button onclick="RefreshPage()">Send</button>
+                    </div>
+                </div>
+            </form>
+            <div id="footerNewsLetterAlert" v-if="showSuccess">
+                Epost adresse har blitt lagret
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+        <script>
+        function RefreshPage(){
+            setTimeout(function(){
+                location.reload();
+            },1500);
+        }
+
+            var newsletterapp = new Vue({
+                el: '#newsletter',
+                data () {
+                    return {
+                        email: '',
+                        showSuccess: false
+                    }
+                },
+                methods: {                
+                    onSubmit() {
+                        console.log('onSubmit')
+                        fetch('/api/add_subscriber/', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRFToken': '{{ csrf_token }}'
+                                },
+                                body: JSON.stringify({'email': this.email}),
+                            })
+                            .then((response) => {
+                                return response.json()
+                            })
+                            .then((data) => {
+                                console.log(data)
+        
+                                this.showSuccess = true
+                                this.email = ''
+                            })
+                            .catch(function(error) {
+                                this.showSuccess = false
+                                console.log('Error:', error);
+                            });
+                    },
+                }
+            })
+        </script>

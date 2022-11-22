@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/kundefordeler.css' %}" type="text/css">
+
+<div class="page-cover">
+  <h1>Fordeler for kunder</h1>
+</div>
+
+<div id="fordelerForKunder">
+  <p>Som kunde hos StellCare så har du noen fordeler</p>
+  <li>Gratis retur innen 14 dager. Les mer <a href="/tjenester">her</a></li>
+  <li>Veilending for å finne det som passer for deg</li>
+  <li>24/7 kundeservice</li>
+  <li>Organiske varer</li>
+  <li>Hver ordre tilbir til å få plast ut av havet våres</li>
+  <li>Du kan vinne premier av verdi 100-400kr</li>
+  <li>Smågodt er inludert i hver ordre ;)</li>
+</div>
+
+{% endblock %}

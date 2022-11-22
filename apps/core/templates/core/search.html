@@ -1,0 +1,89 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+  {% block content %}
+  <link rel="stylesheet" href="{% static '/scss/store/search.css' %}" type="text/css">
+
+
+
+  {% if query %} 
+  {% if results %}
+  <div class="page-cover">
+    <h1>Søkeresultat for "{{query}}"</h1>
+  </div>
+      {% for product in results %}
+      <div id="fullwidth">
+        <div id="spinnerOverlay">
+           <h1>Legger til handlekurv</h1>
+           <div class="spinner"></div>
+        </div>
+        <div class="gallery">
+           <figure class="item">
+            <div class="img-wrap"><img src="{{ product.image.url }}" alt="product-image" /></div>
+            <figcaption class="caption">
+               <h3>{{ product.name }}<br/></h3>
+               <p>{{ product.created_on }}<br/></p>
+            
+              <a  @click="addToCart({{ product.id }})" onclick="addToCartOverlay()" id="addToCart" class="btn-buy">Handlekurv</a>
+              <a class="btn-details" href="{% url  'product_detail' product.slug  %}">Se detaljer</a>
+            </figcaption>
+           </figure>
+        </div>
+      </div>
+      {% endfor %}
+  {% else %}
+  <div class="page-cover">
+    <h1>Vi fant desverre ingenting for søkeordet "{{query}}"</h1>
+  </div>
+  {% endif %}
+  {% else %}
+  <div class="page-cover">
+    <h1>Har du huska å skrive?</h1>
+  </div>
+  {% endif %} 
+  {% endblock %}
+
+
+
+  {% block scripts %}
+<script>
+   
+   const fullwidth = new Vue({
+      el: '#fullwidth',
+      delimeters: ['[[', ']]'],
+      store: store,
+      
+      methods: {
+         addToCart(product_id) {
+            console.log('Product_id', product_id);
+
+            const data = {
+               'product_id': product_id, 
+               'update': false,
+               'quantity': 1
+         };
+
+            fetch('/api/add_to_cart/', {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json',
+                  'X-CSRFToken': '{{ csrf_token }}'
+               },
+               credentials: 'same-origin',
+               body: JSON.stringify(data)
+            }) 
+            .then((response) =>{
+               console.log(response)
+
+               store.commit('increment', 1);
+            })
+            .catch(function (error) {
+               console.log('Error 2');
+               console.log(error);
+            })
+         }
+      }
+   });
+</script>
+{% endblock %}

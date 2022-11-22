@@ -1,0 +1,20 @@
+.tjenester-h1 {
+  margin: 40px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.tjenester-p {
+  margin: 40px;
+  font-size: 18px;
+  text-align: center;
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .tjenester-h1 {
+    font-size: 24px;
+  }
+  .tjenester-p {
+    font-size: 22px;
+  }
+}/*# sourceMappingURL=tjenester.css.map */

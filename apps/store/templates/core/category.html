@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/category.css' %}" type="text/css">
+
+<div class="page-cover">
+   <h1>Produkter innen "{{category.name}}"</h1>
+</div>
+
+{% for product in category.product_set.all %}
+<div id="fullwidth">
+   <div id="spinnerOverlay">
+      <h1>Legger til handlekurv</h1>
+      <div class="spinner"></div>
+   </div>
+   <div class="gallery">
+      <figure class="item">
+       <div class="img-wrap">
+          <img src="{{ product.image.url }}" alt="product-image" />
+          {% if product.is_sale %}
+          <div id="productOnSale">
+             <p>salg</p>
+            </div>
+            {% else %}
+            {% endif %}
+      </div>
+       <figcaption class="caption">
+          <div id="productStock">
+             {% if product.num_available > 0 %}   
+             <p>På lager</p><img src="{% static '/images/other/checkmark.png' %}" width="15sspx" height="15px">
+             {% else %}
+             <p>På lager</p><img src="{% static '/images/other/uncheckmark.png' %}" width="15sspx" height="15px">
+             {% endif %}   
+            </div>
+            {% if product.in_cart %}
+            HANDLEKURV
+            {% endif %}
+            <h3>{{ product.name }}<br/></h3>
+            {% if product.discount_price %}
+            <div id="productPrice">
+               <p id="productNoDiscountPrice">{{ product.price }} kr</p>
+               <p id="productDiscountPrice">{{ product.discount_price }} kr</p>
+            </div>
+            {% else %}
+            <p id="productNoDiscountPrice">{{ product.price }} kr</p>
+            {% endif %}
+            {% if product.num_available > 0 %}   
+            <a  @click="addToCart({{ product.id }})" onclick="addToCartOverlay()" id="addToCart" class="btn-buy">Handlekurv</a>
+            <a class="btn-details" href="{% url  'product_detail' product.slug  %}">Se detaljer</a>
+            {% else %}
+            <a class="btn-no-stock">Produktet er ikke på lager</a>
+            {% endif %}   
+       </figcaption>
+      </figure>
+   </div>
+ </div>
+{% empty %}
+<h3>{{ category.name }} har ingen produkter enda</h3>
+{% endfor %}
+
+
+{% endblock %}

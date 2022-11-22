@@ -1,0 +1,28 @@
+// STANDARD PHONE
+#fordelerForKunder{
+    margin: 10px;
+    p{
+        font-size: 22px;
+        font-weight: bold;
+        text-align: left;
+    }
+    li{
+        font-size: 14px;
+        margin: 5px;
+        margin-left: 0;
+    }
+}
+
+// TABLET
+@media only screen and (min-device-width: 768px) {
+    #fordelerForKunder{
+        margin: 40px;
+        p{
+            font-size: 26px;
+        }
+        li{
+            font-size: 16px;
+            margin: 8px;
+        }
+    }
+}

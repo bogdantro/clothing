@@ -1,0 +1,119 @@
+.cover {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  background: linear-gradient(to top right, white, white, rgba(100, 100, 100, 0.23));
+}
+.cover .content {
+  padding-top: 93px;
+  padding-inline: 15px;
+  width: 100%;
+}
+.cover .content .text {
+  transition: 1s;
+  opacity: 0;
+  transform: translateX(-200px);
+}
+.cover .content .text h1 {
+  color: #183B56;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+.cover .content .text.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.cover .content .image {
+  width: 100%;
+  position: relative;
+  margin-block: 37px;
+  transform: translateX(400px);
+  transition: 1s;
+  opacity: 0;
+}
+.cover .content .image img {
+  width: 80%;
+  max-width: 420px;
+  height: auto;
+  position: relative;
+  left: -10%;
+  transform: translateX(10%);
+}
+.cover .content .image.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.cover .content .cover-actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  transform: translateX(-100px);
+  transition: 1s;
+  opacity: 0;
+}
+.cover .content .cover-actions button {
+  margin-inline: 15px;
+}
+.cover .content .cover-actions button:first-child {
+  margin-left: 0;
+}
+.cover .content .cover-actions.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media only screen and (min-device-width: 1140px) {
+  .cover {
+    width: 100%;
+    height: 100vh;
+    background: white;
+    background: linear-gradient(to left, white, rgba(100, 100, 100, 0.1), white);
+    position: relative;
+  }
+  .cover .content {
+    padding-top: 32vh;
+    padding-inline: 5px;
+    width: 100%;
+  }
+  .cover .content .text {
+    width: 650px;
+  }
+  .cover .content .text h1 {
+    color: #183B56;
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 13px;
+  }
+  .cover .content .image {
+    width: unset;
+    position: absolute;
+    margin-block: 37px;
+    right: 0;
+    top: 30%;
+    transform: translateY(-30%) translateX(300px);
+  }
+  .cover .content .image img {
+    width: 80%;
+    max-width: 380px;
+    height: auto;
+    position: unset;
+    transform: translateX(0);
+  }
+  .cover .content .image.active {
+    transform: translateY(-30%) translateX(0);
+  }
+  .cover .content .cover-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 38px;
+  }
+  .cover .content .cover-actions button {
+    margin-inline: 18px;
+  }
+  .cover .content .cover-actions button:first-child {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=base.css.map */

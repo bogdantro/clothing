@@ -1,0 +1,87 @@
+#productapp .main-image {
+  box-shadow: 0px 10px 10px rgb(230, 230, 230);
+  text-align: center;
+  background: rgb(240, 240, 240);
+  height: auto;
+  padding-bottom: 40px;
+}
+#productapp .main-image img {
+  margin-top: 40px;
+  width: 325px;
+  height: 300px;
+}
+#productapp #productImages {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+}
+#productapp #productImages h1 {
+  font-size: 14px;
+  width: 100%;
+}
+#productapp #productImages #imgLoop {
+  width: 33%;
+  display: inline-block;
+}
+#productapp #productImages #imgLoop #imgDiv {
+  width: 100%;
+}
+#productapp #productImages #imgLoop #imgDiv img {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+}
+#productapp #addToCart {
+  width: 100%;
+  text-align: center;
+}
+#productapp #addToCart button {
+  font-size: 16px;
+  width: 80%;
+  margin: 40px;
+  padding: 5px;
+  background: #2d9cb3;
+  color: white;
+  border: none;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+#productapp #addToCart button:hover {
+  background: #1c6f80;
+}
+#productapp #ifInCart {
+  width: 100%;
+  text-align: center;
+}
+#productapp #ifInCart p {
+  font-size: 14px;
+  width: 80%;
+  margin: 40px;
+  padding: 5px;
+  background: #2d9cb3;
+  color: white;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+}
+#productapp .subtitle {
+  text-align: center;
+  font-size: 24px;
+  margin: 40px;
+  margin-bottom: 0;
+}
+#productapp #reviewSection {
+  text-align: center;
+}
+#productapp #reviewSection #reviewCard {
+  margin: 50px;
+  margin-left: 0;
+  margin-right: 0;
+  border: 1px solid rgb(160, 160, 160);
+}
+#productapp #reviewSection #reviewCard #reviewText {
+  font-size: 16px;
+  margin: 20px;
+}/*# sourceMappingURL=product.css.map */

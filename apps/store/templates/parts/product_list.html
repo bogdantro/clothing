@@ -1,0 +1,22 @@
+<section id="productSection">
+    <div id="mainCard">
+       <h1>Dagens utvalgte</h1>
+       {% for p in listproducts %}
+       <div id="productSection">
+          <a href="{% url 'product_detail' p.slug %}" style="text-decoration: none;">
+          <div class="card">
+             <img class="img-fluid" src="{{p.image.url}}">
+             <div class="detail">
+                <h2 class="name">{{p.name}}</h2>
+                <h2 class="price">kr {{p.price}}</h2>
+                <h2 class="category">{{p.category}}</h2>
+             </div>
+             </div>
+                <div id="buttonSection">
+                   <button>SE PRODUKTET</button>
+                </div>
+             </a>
+             </div>
+             {% endfor %}
+    </div>
+ </section>

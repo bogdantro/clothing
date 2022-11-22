@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Hjelp | StellCare{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/help.css' %}" type="text/css">
+
+<div class="page-cover">
+  <h1>Få hjelp med å finne produket som passer til deg</h1>
+</div>
+
+
+<div class="contact">
+   <button onclick="contact()">Kontakt oss</button>
+ </div>
+
+ <div id="helpContactUs">
+   <div id="text">
+     <h1>La oss hjelpe deg</h1>
+   </div>
+   <div id="formDiv">
+    <form method="post">
+
+      <div id="divOne">
+        <label for="id_fra_epost">Fra Epost</label>
+        {{ form.fra_epost }}
+        <br>
+        <label for="id_hud_type">Hud Type</label>
+        {{ form.hud_type }}
+        <br>
+      </div>
+
+      <div id="divTwo">
+        <label for="id_alder">Alder</label>
+        {{ form.alder }}
+        <br>
+        <label for="id_kjønn">Kjønn</label>
+        {{ form.kjønn }}
+        <br>
+      </div>
+
+      {% csrf_token %}
+      <button type="submit">Send</button>
+    </form>
+   </div>
+ </div>
+
+  
+ <script type="text/javascript">
+    function contact() {
+    var form = document.getElementById("helpContactUs");
+    if (window.getComputedStyle(form,null).getPropertyValue("display") == 'none'){    
+      form.style.display = "inline-block";
+    } else {
+      form.style.display = "none";
+    }
+  }
+  </script>
+
+{% endblock %}

@@ -1,0 +1,535 @@
+#desNav {
+  display: none;
+}
+
+#mobileNav {
+  background: transparent;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+}
+#mobileNav.sticky {
+  transition: 0.4s;
+  background: rgba(255, 255, 255, 0.9);
+}
+#mobileNav.menu {
+  background: white;
+  transition: 0.4s;
+}
+#mobileNav.menu .icons {
+  pointer-events: none;
+}
+#mobileNav.menu .icons i {
+  pointer-events: none;
+}
+#mobileNav.search {
+  background: white;
+  transition: 0.2s;
+}
+#mobileNav .logo {
+  transform: translateX(43px);
+  font-size: 20px;
+  color: #183B56;
+}
+#mobileNav .logo span {
+  font-size: 12px;
+}
+#mobileNav .hamburger {
+  padding: 10px;
+  margin: 0;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+  text-align: center;
+  position: absolute;
+  left: 18px;
+}
+#mobileNav .hamburger span {
+  height: 3px;
+  background: #183B56;
+  border-radius: 3px;
+  display: block;
+  transition: 0.2s;
+  margin-block: 6px;
+  transform: translateX(-9px) rotate(0deg);
+  text-align: center;
+  transform-origin: center center;
+}
+#mobileNav .hamburger .upper-span {
+  width: 14px;
+}
+#mobileNav .hamburger .center-span {
+  width: 18px;
+}
+#mobileNav .hamburger .lower-span {
+  width: 23px;
+}
+#mobileNav .hamburger.click .upper-span {
+  width: 23px;
+  transform: rotate(45deg) translateY(13px);
+}
+#mobileNav .hamburger.click .center-span {
+  opacity: 0;
+  width: 0px;
+}
+#mobileNav .hamburger.click .lower-span {
+  width: 23px;
+  transform: rotate(-45deg) translateY(-12px);
+}
+#mobileNav .sidebar {
+  background: white;
+  height: 100vh;
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  width: 100%;
+  z-index: 120;
+  opacity: 0;
+  pointer-events: none;
+  display: unset;
+}
+#mobileNav .sidebar .sidebar-bottom-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+#mobileNav .sidebar .sidebar-bottom-img img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-48px);
+  bottom: 0;
+  width: 100px;
+  height: auto;
+}
+#mobileNav .sidebar .sidebar-ul {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  transform: translateY(0);
+  height: 110vh;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li {
+  list-style: none;
+  width: 100%;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  z-index: 100;
+  display: flex;
+  opacity: 1;
+  transition: 0.4s;
+  position: relative;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-login {
+  z-index: 10;
+  display: flex;
+  width: 100%;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-login .part1 {
+  width: 50%;
+  display: flex;
+  border-right: 1px solid lightgray;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-login .part1 p {
+  color: #082133;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14.5px;
+  transform: translateX(53px);
+  position: absolute;
+  padding: 19px 0;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-login .part1 p span {
+  font-weight: normal;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-login .part1 i {
+  font-size: 22px;
+  align-self: center;
+  transform: translateY(0) translateX(25px);
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-login .part2 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-login .part2 a {
+  width: auto;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: underline;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-login .part2 a:active {
+  background: none;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-not-login {
+  z-index: 10;
+  display: flex;
+  width: 100%;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-not-login .part1 {
+  width: 50%;
+  display: flex;
+  border-right: 1px solid lightgray;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-not-login .part1 p {
+  color: #082133;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14.6px;
+  transform: translateX(60px);
+  position: absolute;
+  padding: 19px 0;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-not-login .part1 i {
+  font-size: 22px;
+  align-self: center;
+  transform: translateY(0) translateX(25px);
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-not-login .part2 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-not-login .part2 a {
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: underline;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-not-login .part2 a:active {
+  background: none;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li a {
+  color: #082133;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  font-weight: 800;
+  font-size: 14.6px;
+  padding: 19px 0;
+  padding-left: 25px;
+  cursor: pointer;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li a:active {
+  background: rgba(213, 237, 255, 0.6039215686);
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.17);
+  transform: translateY(19px) translateX(0);
+  position: absolute;
+  left: 0;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li a i {
+  transform: translateX(-50px) translateY(5px);
+  font-size: 16px;
+  transition: 0.2s !important;
+  float: right;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .help-dropdown .help-dropdown-links {
+  width: 100%;
+  display: none;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .help-dropdown .help-dropdown-links.active {
+  display: block;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .help-dropdown .help-dropdown-links .nav-link-parent {
+  width: 100%;
+  height: 100%;
+  background: rgba(241, 249, 255, 0.6039215686);
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .help-dropdown .help-dropdown-links a {
+  padding-left: 45px;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .help-dropdown .help-dropdown-links a::after {
+  transform: translateY(19px) translateX(0);
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .help-dropdown #helpToggle.click {
+  color: #0088F9;
+}
+#mobileNav .sidebar .sidebar-ul .sidebar-li .help-dropdown #helpToggle.click i {
+  transform: rotateX(180deg) translateX(-50px) translateY(-11px);
+  transform-origin: center center;
+}
+#mobileNav .sidebar.active {
+  opacity: 1;
+  pointer-events: visible;
+  transition: 0.4s;
+}
+#mobileNav .icons {
+  display: flex;
+}
+#mobileNav .icons svg {
+  width: 29px;
+  height: auto;
+  margin-left: 10px;
+}
+#mobileNav .icons span {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 4px 8px;
+  background: #183B56;
+  border-radius: 100%;
+  color: white;
+}
+#mobileNav .icons i {
+  color: #183B56;
+  font-size: 23px;
+  margin-right: 5px;
+}
+#mobileNav .icons i#searcIcon {
+  border-radius: 100%;
+  padding: 8px;
+}
+#mobileNav .icons i#searcIcon.active {
+  background: rgba(100, 100, 100, 0.3);
+}
+#mobileNav #searchBar {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  border-bottom: 1px solid rgba(90, 90, 90, 0.3843137255);
+  padding-top: 2px;
+}
+#mobileNav #searchBar.active {
+  top: 65px;
+  transition: 0.2s;
+  opacity: 1;
+  pointer-events: visible;
+}
+#mobileNav #searchBar form {
+  width: 100%;
+  height: 65px;
+  display: flex;
+}
+#mobileNav #searchBar form button {
+  background: none;
+  padding: 0px;
+  border: none;
+  width: 0;
+  height: 0;
+}
+#mobileNav #searchBar form i {
+  width: 0;
+  position: relative;
+  right: 40px;
+  top: 23px;
+  z-index: 10;
+  font-size: 23px;
+  color: #183B56;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#mobileNav #searchBar form i:hover {
+  filter: brightness(95%);
+}
+#mobileNav #searchBar form input {
+  border-radius: 4px;
+  padding: 5px;
+  padding-block: 15px;
+  padding-left: 15px;
+  border: none;
+  outline: none;
+  color: #183B56;
+  font-size: 13px;
+  width: 100%;
+  font-weight: 600;
+  min-height: 45px;
+  cursor: pointer;
+  opacity: 1;
+}
+#mobileNav #searchBar form input::-moz-placeholder {
+  color: #183B56;
+  opacity: 0.6;
+}
+#mobileNav #searchBar form input:-ms-input-placeholder {
+  color: #183B56;
+  opacity: 0.6;
+}
+#mobileNav #searchBar form input::placeholder {
+  color: #183B56;
+  opacity: 0.6;
+}
+#mobileNav #searchBar form input:hover {
+  filter: brightness(95%);
+}
+#mobileNav #searchBar form input:focus {
+  cursor: unset;
+  filter: brightness(100%);
+}
+
+@media only screen and (min-device-width: 1140px) {
+  #mobileNav {
+    display: none;
+  }
+  #desNav {
+    background: transparent;
+    z-index: 100;
+    width: 100%;
+    max-width: 1150px;
+    height: 80px;
+    position: fixed;
+    top: 0px;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 5px;
+  }
+  #desNav.sticky {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  #desNav .logo {
+    font-size: 22px;
+    color: #183B56;
+    cursor: pointer;
+  }
+  #desNav .logo span {
+    font-size: 14px;
+  }
+  #desNav .menu {
+    position: absolute;
+    left: 38%;
+    transform: translateX(-38%);
+  }
+  #desNav .menu a {
+    color: #183B56;
+    font-size: 16px;
+    padding-inline: 6px;
+    margin-inline: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+    padding-bottom: 7px;
+  }
+  #desNav .menu a:hover {
+    border-bottom: 2px solid #183B56;
+  }
+  #desNav #searchBar {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #desNav #searchBar form {
+    display: flex;
+    align-items: center;
+    background: rgba(100, 100, 100, 0.1);
+    padding: 2px 11px;
+    padding-right: 5px;
+    border-radius: 25px;
+  }
+  #desNav #searchBar form button {
+    background: none;
+    padding: 0px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  #desNav #searchBar form i {
+    width: 40px;
+    padding: 10px;
+    margin-left: 15px;
+    z-index: 10;
+    font-size: 21px;
+    color: #183B56;
+    cursor: pointer;
+    transition: 0.2s;
+    background: rgba(100, 100, 100, 0.2);
+    border-radius: 100%;
+  }
+  #desNav #searchBar form i:hover {
+    background: rgba(100, 100, 100, 0.3);
+  }
+  #desNav #searchBar form input {
+    border: none;
+    outline: none;
+    color: #183B56;
+    font-size: 13px;
+    width: 100%;
+    font-weight: 600;
+    min-height: 45px;
+    cursor: pointer;
+    opacity: 1;
+    background: transparent;
+  }
+  #desNav #searchBar form input::-moz-placeholder {
+    color: #183B56;
+    opacity: 0.6;
+  }
+  #desNav #searchBar form input:-ms-input-placeholder {
+    color: #183B56;
+    opacity: 0.6;
+  }
+  #desNav #searchBar form input::placeholder {
+    color: #183B56;
+    opacity: 0.6;
+  }
+  #desNav #searchBar form input:focus {
+    width: 200px;
+    cursor: unset;
+  }
+  #desNav .icons {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #desNav .icons svg {
+    width: 34px;
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  #desNav .icons svg:hover {
+    transform: scale(1.2);
+  }
+  #desNav .icons span {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    padding: 4px 8px;
+    background: #183B56;
+    border-radius: 100%;
+    color: white;
+  }
+}/*# sourceMappingURL=nav.css.map */

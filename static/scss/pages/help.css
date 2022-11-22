@@ -1,0 +1,94 @@
+#helpContactUs {
+  display: none;
+  width: 100%;
+}
+#helpContactUs #text {
+  width: 100%;
+}
+#helpContactUs #text h1 {
+  text-align: center;
+  padding: 35px;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+#helpContactUs #formDiv {
+  text-align: center;
+  width: 100%;
+}
+#helpContactUs #formDiv form label {
+  margin: 5px;
+  text-align: left;
+  width: 20%;
+  font-weight: bold;
+}
+#helpContactUs #formDiv form input {
+  margin: 5px;
+  border: 1px solid rgb(220, 220, 220);
+  width: 50%;
+  outline: none;
+  border-radius: 5px;
+}
+#helpContactUs #formDiv form input:focus {
+  border: 1px solid black;
+}
+#helpContactUs #formDiv form button {
+  margin: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  color: rgb(50, 50, 50);
+  padding: 5px;
+  border: 1px solid #2d9cb3;
+  width: 50%;
+  text-align: center;
+  background: rgba(230, 230, 230, 0.9);
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+#helpContactUs #formDiv form button:hover {
+  background: #2d9cb3;
+  color: white;
+}
+#helpContactUs #formDiv form button:active {
+  background: #2d9cb3;
+  color: white;
+}
+
+@media only screen and (min-device-width: 1024px) {
+  #helpContactUs {
+    text-align: center;
+  }
+  #helpContactUs #text h1 {
+    font-size: 26px;
+  }
+  #helpContactUs #formDiv form #divOne {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  #helpContactUs #formDiv form #divTwo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  #helpContactUs #formDiv form label {
+    margin: 15px;
+    margin-right: 0;
+    width: 7%;
+  }
+  #helpContactUs #formDiv form input {
+    padding: 3px;
+    margin: unset;
+    width: 20%;
+  }
+  #helpContactUs #formDiv form input:hover {
+    border: 1px solid black;
+  }
+  #helpContactUs #formDiv form button {
+    width: 20%;
+  }
+}/*# sourceMappingURL=help.css.map */

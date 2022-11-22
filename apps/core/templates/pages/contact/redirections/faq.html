@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/faq.css' %}" type="text/css">
+
+<div class="page-cover">
+  <h1>Ofte stilte spørsmål</h1>
+</div>
+
+<div id="faqSection">
+  {% for faq in faq %}
+    <div id="faqDiv">
+      <div id="question">
+        <h1>{{faq.question}}</h1>
+      </div>
+      <div id="answer">
+        <h1>{{faq.answer}}</h1>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+<!-- <script type="text/javascript">
+  function faq(){
+    const answer = document.getElementById('answer');
+    if (window.getComputedStyle(answer, null).getPropertyValue("display") == 'none'){    
+      answer.classList.add('click')
+  } else{
+    answer.classList.remove('click')
+  }
+} 
+</script> -->
+
+{% endblock %}

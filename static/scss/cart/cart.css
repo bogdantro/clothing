@@ -1,0 +1,123 @@
+#mobileNav {
+  display: none;
+}
+
+#cartapp {
+  width: 100%;
+  min-height: 88vh;
+  padding-top: 150px;
+  background: white;
+  position: relative;
+}
+#cartapp .cart-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  padding-inline: 20px;
+  padding-block: 10px;
+}
+#cartapp .cart-top-row.sticky {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.98);
+}
+#cartapp .cart-top-row .small-paragraph {
+  font-size: 15px;
+}
+#cartapp .cart-top-row .go-back {
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding-inline: 5px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  color: rgba(24, 59, 86, 0.7882352941);
+  cursor: pointer;
+}
+#cartapp .cart-top-row .go-back span {
+  display: block;
+  width: 42px;
+  height: 3px;
+  background: rgba(24, 59, 86, 0.7882352941);
+  margin-right: 10px;
+  transform: translateY(2px);
+  border-radius: 10px;
+}
+#cartapp .no-cart {
+  text-align: center;
+}
+#cartapp .no-cart img {
+  display: none;
+}
+#cartapp .no-cart h1 {
+  color: #183B56;
+  font-size: 31px;
+  font-weight: 800;
+  margin-bottom: 45px;
+}
+
+@media only screen and (min-device-width: 1140px) {
+  #desNav {
+    display: none;
+  }
+  #cartapp {
+    width: 100%;
+    min-height: 308vh;
+    padding-top: 150px;
+    background: white;
+    position: relative;
+  }
+  #cartapp .cart-top-row {
+    display: none;
+  }
+  #cartapp .no-cart {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #cartapp .no-cart .row-one h1 {
+    color: #183B56;
+    font-size: 31px;
+    font-weight: 800;
+    margin-bottom: 45px;
+  }
+  #cartapp .no-cart .row-two {
+    position: relative;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  #cartapp .no-cart .row-two img {
+    display: block;
+    width: 500px;
+    height: auto;
+    border-radius: 4px;
+    position: relative;
+  }
+  #cartapp .no-cart .row-two::before {
+    border-radius: 4px;
+    content: "";
+    display: block;
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+  }
+}/*# sourceMappingURL=cart.css.map */

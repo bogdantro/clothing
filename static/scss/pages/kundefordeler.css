@@ -1,0 +1,26 @@
+#fordelerForKunder {
+  margin: 10px;
+}
+#fordelerForKunder p {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+}
+#fordelerForKunder li {
+  font-size: 14px;
+  margin: 5px;
+  margin-left: 0;
+}
+
+@media only screen and (min-device-width: 768px) {
+  #fordelerForKunder {
+    margin: 40px;
+  }
+  #fordelerForKunder p {
+    font-size: 26px;
+  }
+  #fordelerForKunder li {
+    font-size: 16px;
+    margin: 8px;
+  }
+}/*# sourceMappingURL=kundefordeler.css.map */

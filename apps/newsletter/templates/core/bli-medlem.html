@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Bli Medlem | StellCare{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/newsletter/newsletter.css' %}" type="text/css">
+
+<div class="page-cover">
+    <h1>Bli medlem av StellCare</h1>
+</div>
+
+<div id="medlemInfo">
+    <h1>Som medlem så har du disse fordelene:</h1>
+    <li>Rabatt hver uke</li>
+    <li>Dobbel sjans å vinne premier</li>
+    <li>Varsling om nye produkter</li>
+</div>
+
+<p id="medlemAction"><i class="fas fa-arrow-down"></i>Bli medlem under<i class="fas fa-arrow-down"></i></p>
+{% endblock %}

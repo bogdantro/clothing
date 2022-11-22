@@ -1,0 +1,23 @@
+#refundsText {
+  margin: 20px;
+}
+#refundsText h1 {
+  text-align: left;
+  font-size: 24px;
+}
+#refundsText p {
+  font-size: 16px;
+  text-align: left;
+}
+
+@media only screen and (min-device-width: 768px) {
+  #refundsText {
+    margin: 80px;
+  }
+  #refundsText h1 {
+    font-size: 26px;
+  }
+  #refundsText p {
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=refunds.css.map */

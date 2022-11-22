@@ -1,0 +1,91 @@
+
+// STANDARD PHONE
+#productapp{
+  .main-image{
+    box-shadow: 0px 10px 10px rgb(230, 230, 230);    
+    text-align: center;
+    background: rgb(240, 240, 240);
+    height: auto;
+    padding-bottom: 40px;
+    img{
+      margin-top: 40px;
+      width: 325px;
+      height: 300px;
+    }
+  }
+  #productImages{
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+    h1{
+      font-size: 14px;
+      width: 100%;
+    }
+    #imgLoop{
+      width: 33%;
+      display: inline-block;
+      #imgDiv{
+        width: 100%;
+        img{
+          margin: 10px;
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+  #addToCart{
+    width: 100%;
+    text-align: center;
+    button{
+      font-size: 16px;
+      width: 80%;
+      margin: 40px;
+      padding: 5px;
+      background: #2d9cb3;
+      color: white;
+      border: none;
+      outline: none;
+      text-align: center;
+      text-transform: uppercase;
+      transition: .3s;
+      &:hover{
+        background: #1c6f80;
+      }
+    }
+  }
+  #ifInCart{
+    width: 100%;
+    text-align: center;
+    p{
+      font-size: 14px;
+      width: 80%;
+      margin: 40px;
+      padding: 5px;
+      background: #2d9cb3;
+      color: white;
+      border: none;
+      outline: none;
+      text-transform: uppercase;
+    }
+  }
+  .subtitle{
+    text-align: center;
+    font-size: 24px;
+    margin: 40px;
+    margin-bottom: 0;
+  }
+  #reviewSection{
+    text-align: center;
+    #reviewCard{
+      margin: 50px;
+      margin-left: 0;
+      margin-right: 0;
+      border: 1px solid rgb(160, 160, 160);
+      #reviewText{
+        font-size: 16px;
+        margin: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static '/scss/parts/popup.css' %}" type="text/css">
+
+    <div id="popup" class="hidden">
+        <h1>Ved å bruke denne nettsiden samtyker du til våres vilkår og betingelser</h1>
+        <p onclick="window.location.href='/vilkår-og-betingelser'">Les mer her</p>
+        <button id="accept">samtyk</button>
+    </div>
+
+

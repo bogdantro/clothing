@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/dine-bestilinger.css' %}" type="text/css">
+
+<div class="page-cover">
+    <h1>Mine bestilinger</h1>
+</div>
+
+
+<div id="myOrdersSection">
+    {% for order in request.user.orders.all %}
+    <div id="myOrdersDiv">
+        <p>Vi motok bestilingen: {{ order.created_at }}</p>
+        <p><strong>Status: </strong>{{ order.status }}</p>
+        
+        <table class="table is-striped is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Antall</th>
+                    <th>Pris</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for item in order.items.all %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price }}kr</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            
+            <tfoot>
+                <tr>
+                    <td><strong>Totalt</strong></td>
+                    <td>{{ order.get_total_quantity }}</td>
+                    <td>{{ order.paid_amount }}kr</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    {% empty %}
+    <div id="noOrders">
+        <h1>Du har ingen bestilinger enda...</h1>
+    </div>
+    {% endfor %}
+</div>
+    {% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block title %}Kundeservice | StellCare{% endblock %}
+
+{% block content %}
+
+
+
+<div class="page-cover">
+  <h1>Hva kan vi hjelpe deg med?</h1>
+</div>
+  <div id="iconSections1">
+    <a href="/kundeservice/faq" style="color: black;">
+      <div id="imageDiv">
+        <img src="{% static '/images/icons/contact-message-icon.png' %}" width="300px" height="300px">
+        <h1>Ofte stilte spørsmål</h1>
+      </div>
+    </a>
+    
+    <a href="/kundeservice/refunds" style="color: black;">
+      <div id="imageDiv">
+        <img src="{% static '/images/icons/contact-refunds-icon.png' %}" width="300px" height="300px">
+        <h1>Retur og endring av ordre</h1>
+      </div>
+    </a>
+    
+    <a href="/kundeservice/tjenester" style="color: black;">
+      <div id="imageDiv">
+        <img src="{% static '/images/icons/contact-tjenester-icon.png' %}" width="300px" height="300px">
+        <h1>Tjenester</h1>
+      </div>
+    </a>
+    
+    <a href="/kundeservice/dine-bestilinger" style="color: black;">
+      <div id="imageDiv">
+        <img src="{% static '/images/icons/contact-orders-icon.png' %}" width="300px" height="300px">
+        <h1>Mine bestilinger</h1>
+      </div>
+    </a>
+    
+    <a href="/kundeservice/kundefordeler" style="color: black;">
+      <div id="imageDiv">
+        <img src="{% static '/images/icons/contact-subscriber-icon.png' %}" width="300px" height="300px">
+        <h1>Kundefordeler</h1>
+      </div>
+    </a>
+    
+  </div>
+  <!-------------MAX 5 - 1 row  ---------------->
+  
+  <div id="iconSections2">
+    <a href="/kundeservice/pakesporing" style="color: black;">
+      <div id="imageDiv">
+        <img src="{% static '/images/icons/contact-pakesporing-icon.png' %}" width="300px" height="300px">
+        <h1>Pakesporing</h1>
+      </div>
+    </a>
+    
+    <a href="/kundeservice/jobber" style="color: black;">
+      <div id="imageDiv">
+        <img src="{% static '/images/icons/contact-jobs-icon.png' %}" width="300px" height="300px">
+        <h1>Jobber</h1>
+  </div>
+</a>
+
+<a href="/om" style="color: black;">
+  <div id="imageDiv">
+    <img src="{% static '/images/icons/contact-om-icon.png' %}" width="300px" height="300px">
+    <h1>Om StellCare</h1>
+  </div>
+</a>
+</div>
+
+<div class="contact">
+  <h1>Finner du ikke det du leter etter?</h1>
+  <button onclick="contactForm()">Kontakt oss</button>
+</div>
+
+
+<section id="contactUs">
+  <div id="colLeft">
+    <h1>Hva trenger du hjelp med?</h1>
+  </div>
+  <div id="colRight">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions">
+          <button type="submit">Send</button>
+        </div>
+    </form>
+    </div>
+ </section>
+ 
+
+ <script type="text/javascript">
+
+function contactForm() {
+  var form = document.getElementById("contactUs");
+  if (window.getComputedStyle(form,null).getPropertyValue("display") == 'none'){    
+    form.style.display = "block";
+  } else {
+    form.style.display = "none";
+  }
+}
+ </script>
+
+{% endblock %}

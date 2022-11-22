@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/store/bundle.css' %}" type="text/css">
+
+<div id="bundleapp">
+    {{ bundle.name }}
+ <button @click="addToCart({{ bundle.id }})">handlekurv</button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+   function RefreshPage(){
+      setTimeout(function(){
+         location.reload();
+      },300);
+   }
+
+   const bundleapp = new Vue({
+      el: '#bundleapp',
+      delimeters: ['[[', ']]'],
+      store: store,
+      mounted() {
+         console.log('Mounted');
+      },
+      methods: {
+         addToCart(bundle_id) {
+            console.log('Bundle_id', bundle_id);
+
+            const data = {
+               'bundle_id': bundle_id, 
+               'update': false,
+               'quantity': 1
+         };
+
+            fetch('/api/add_to_cart_bundle/', {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json',
+                  'X-CSRFToken': '{{ csrf_token }}'
+               },
+               credentials: 'same-origin',
+               body: JSON.stringify(data)
+            }) 
+            .then((response) =>{
+               console.log(response)
+
+
+               store.commit('increment', 1);
+
+            })
+            .catch(function (error) {
+               console.log('Error 2');
+               console.log(error);
+            })
+         }
+      }
+   });
+</script>
+{% endblock %}
+
+
+

@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/userprofile/login.css' %}" type="text/css">
+
+<div class="page-cover">
+    <h1>Logg inn i brukeren din</h1>
+</div>
+<br>
+<br>
+
+<div id="logInForm">
+    <h1 class="title">Logg Inn</h1>
+    <form method="post">
+        {% csrf_token %}
+
+            <label for="id_username">Brukernavn</label>
+            {{ form.username }}
+            <br>
+            <div id="signUpFormErrors">{{ form.username.errors }}</div>
+
+            <label for="id_password">Passord</label>
+            {{ form.password }}
+            <br>
+            <div id="signUpFormErrors">{{ form.username.errors }}</div>
+            <div id="submit">
+                <button id="logInButton">Logg inn</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

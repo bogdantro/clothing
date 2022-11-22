@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/refunds.css' %}" type="text/css">
+
+<div class="page-cover">
+  <h1>Retur og endring av ordre</h1>
+</div>
+
+<div id="refundsText">
+  <h1>Slik gjør du:</h1>
+  <p>Send en mail til epost addresset support@stellcare.com</p>
+  <p>Du må inkludere</p>
+  <li>Navn av produkt</li>
+  <li>Navnet ditt</li>
+  <li>Ordre ID</li>
+  <li>Grunn til returnering/endring</li>
+</div>
+  
+{% endblock %}
