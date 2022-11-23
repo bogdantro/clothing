@@ -17,9 +17,6 @@ class Cart(object):
         product_ids = self.cart.keys()        
         product_clean_ids = []
 
-        bundle_ids = self.cart.keys()        
-        bundle_clean_ids = []
-
         for p in product_ids:
             product_clean_ids.append(p)
             self.cart[str(p)]['product'] = Product.objects.get(pk=p)    
@@ -61,36 +58,13 @@ class Cart(object):
             self.cart[product_id]['quantity'] = self.cart[product_id]['quantity'] + 1
 
 
-        self.save()
-
-    def add_bundle(self, bundle, quantity=1, update_quantity=False):
-        bundle_id = str(bundle.id)
-        price = bundle.price
-
-        print('Bundle_id:', bundle_id)
-
-        if bundle_id not in self.cart:
-            self.cart[bundle_id] = {'quantity': 0, 'price': price, 'id': bundle_id}
-        
-        if update_quantity:
-            self.cart[bundle_id]['quantity'] = quantity
-        else:
-            self.cart[bundle_id]['quantity'] = self.cart[bundle_id]['quantity'] + 1
-
-
-        self.save()    
+        self.save() 
     
     def has_product(self, product_id):
         if str(product_id) in self.cart:
             return True
         else:
-            return False       
-
-    def has_bundle(self, bundle_id):
-        if str(bundle_id) in self.cart:
-            return True
-        else:
-            return False        
+            return False             
     
     def remove(self, product_id):
         if product_id in self.cart:

@@ -10,6 +10,12 @@ if DEBUG == True:
 
     SECRET_KEY = '!8z7%#88q0b_saphy285e2b&lms#5xvor%hy=ycv4fb$9tt^vi'
 
+    PAYPAL_API_KEY_PUBLISHABLE = "ARJ_-WnfpFn5m0Qv-bCKKmxFECmfNPKXKLc_vx63MdBt41wLeIzofRxv8vxaLNdkmR6GXZN8rUFyC-uT"
+    PAYPAL_API_KEY_HIDDEN = "EFeBteFAP6iSlzbBdXMBTZT2Fe8YJhP3-LmfcGU1_qybcvgSL5uorkjpTCI3v2uqnFJMUSzWpVMuyR4S"
+
+    STRIPE_API_KEY_PUBLISHABLE = "pk_test_51HeNI9Cn41loPLwRgKKwM2uuPGftmyNCwuatY5DuwoYRyYAcORpcZ1Rjws8TCljyxHxjCfBuKNh6KWwPIS4bVX1Y00q1V5A38r"
+    STRIPE_API_KEY_HIDDEN = "sk_test_51HeNI9Cn41loPLwRUPgl0x2VAVzpr2zCgSowjKdtL0SCPGubA5sceOTtFsKsP5Mv1foxJRckM3aSZDkleQfqquIg00l3e2foLh"
+
 
     ALLOWED_HOSTS = []
 
@@ -20,6 +26,14 @@ if DEBUG == True:
     LOGIN_URL = 'login'
     LOGIN_REDIRECT_URL = 'cart-detail'
     LOGOUT_REDIRECT_URL = 'hjemme'
+
+    AUTHENTICATION_BACKENDS = [
+        # Needed to login by username in Django admin, regardless of `allauth`
+        'django.contrib.auth.backends.ModelBackend',
+
+        # `allauth` specific authentication methods, such as login by e-mail
+        'allauth.account.auth_backends.AuthenticationBackend',
+    ]
 
     INSTALLED_APPS = [
         'django.contrib.sites',
@@ -126,3 +140,5 @@ if DEBUG == True:
         BASE_DIR / "static"
     ]
     MEDIA_URL='images/'
+
+    SITE_ID = 1
