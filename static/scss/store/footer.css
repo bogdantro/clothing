@@ -15,7 +15,6 @@
 #mobileFooter .content .links a {
   font-size: 16px;
   display: block;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   padding-right: 40px;
