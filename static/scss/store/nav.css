@@ -3,7 +3,7 @@
 }
 
 #mobileNav {
-  background: transparent;
+  background: #2f3030;
   z-index: 100;
   width: 100%;
   height: 70px;
@@ -14,12 +14,7 @@
   justify-content: space-between;
   padding-inline: 20px;
 }
-#mobileNav.sticky {
-  transition: 0.4s;
-  background: rgba(255, 255, 255, 0.9);
-}
 #mobileNav.menu {
-  background: white;
   transition: 0.4s;
 }
 #mobileNav.menu .icons {
@@ -29,13 +24,12 @@
   pointer-events: none;
 }
 #mobileNav.search {
-  background: white;
   transition: 0.2s;
 }
 #mobileNav .logo {
   transform: translateX(43px);
   font-size: 20px;
-  color: #183B56;
+  color: rgb(246, 246, 246);
 }
 #mobileNav .logo span {
   font-size: 12px;
@@ -52,7 +46,7 @@
 }
 #mobileNav .hamburger span {
   height: 3px;
-  background: #183B56;
+  background: rgb(246, 246, 246);
   border-radius: 3px;
   display: block;
   transition: 0.2s;
@@ -60,14 +54,6 @@
   transform: translateX(-9px) rotate(0deg);
   text-align: center;
   transform-origin: center center;
-}
-#mobileNav .hamburger .upper-span {
-  width: 14px;
-}
-#mobileNav .hamburger .center-span {
-  width: 18px;
-}
-#mobileNav .hamburger .lower-span {
   width: 23px;
 }
 #mobileNav .hamburger.click .upper-span {
@@ -93,21 +79,6 @@
   opacity: 0;
   pointer-events: none;
   display: unset;
-}
-#mobileNav .sidebar .sidebar-bottom-img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-}
-#mobileNav .sidebar .sidebar-bottom-img img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-48px);
-  bottom: 0;
-  width: 100px;
-  height: auto;
 }
 #mobileNav .sidebar .sidebar-ul {
   position: relative;
@@ -141,11 +112,12 @@
   border-right: 1px solid lightgray;
 }
 #mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-login .part1 p {
-  color: #082133;
+  color: #183b56;
   display: inline-block;
   text-decoration: none;
-  font-weight: 800;
-  font-size: 14.5px;
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.9;
   transform: translateX(53px);
   position: absolute;
   padding: 19px 0;
@@ -183,11 +155,12 @@
   border-right: 1px solid lightgray;
 }
 #mobileNav .sidebar .sidebar-ul .sidebar-li .sidebar-myaccount .user-is-not-login .part1 p {
-  color: #082133;
+  color: #183b56;
   display: inline-block;
   text-decoration: none;
-  font-weight: 800;
-  font-size: 14.6px;
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.9;
   transform: translateX(60px);
   position: absolute;
   padding: 19px 0;
@@ -211,16 +184,16 @@
   background: none;
 }
 #mobileNav .sidebar .sidebar-ul .sidebar-li a {
-  color: #082133;
+  color: #183b56;
   display: inline-block;
   text-decoration: none;
   width: 100%;
   height: 100%;
-  font-weight: 800;
-  font-size: 14.6px;
+  font-weight: 500;
+  font-size: 15px;
   padding: 19px 0;
   padding-left: 25px;
-  cursor: pointer;
+  opacity: 0.9;
 }
 #mobileNav .sidebar .sidebar-ul .sidebar-li a:active {
   background: rgba(213, 237, 255, 0.6039215686);
@@ -236,7 +209,7 @@
   left: 0;
 }
 #mobileNav .sidebar .sidebar-ul .sidebar-li a i {
-  transform: translateX(-50px) translateY(5px);
+  transform: translateX(-50px) translateY(2px);
   font-size: 16px;
   transition: 0.2s !important;
   float: right;
@@ -278,6 +251,7 @@
   width: 29px;
   height: auto;
   margin-left: 10px;
+  color: rgb(246, 246, 246);
 }
 #mobileNav .icons span {
   padding: 0;
@@ -291,12 +265,12 @@
   right: 10px;
   top: 10px;
   padding: 4px 8px;
-  background: #183B56;
+  background: rgb(246, 246, 246);
   border-radius: 100%;
-  color: white;
+  color: #183b56;
 }
 #mobileNav .icons i {
-  color: #183B56;
+  color: rgb(246, 246, 246);
   font-size: 23px;
   margin-right: 5px;
 }

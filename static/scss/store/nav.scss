@@ -1,8 +1,14 @@
+$black: #1F1F1F;
+$white: rgb(246,246,246);
+$primBtn: #06c484;
+$txt: #183b56;
+$navBg : #2f3030;
+
 #desNav{
     display: none;
 }
 #mobileNav{
-    background: transparent;
+    background: $navBg;
     z-index: 100;
     width: 100%;
     height: 70px;
@@ -13,11 +19,8 @@
     justify-content: space-between;
     padding-inline: 20px;
     &.sticky{
-        transition: .4s;
-        background: rgba(255, 255, 255, 0.9);
     }
     &.menu{
-        background: white;
         transition: .4s;
         .icons{
             pointer-events: none;
@@ -27,13 +30,12 @@
         }
     }
     &.search{
-        background: white;
         transition: .2s;
     }
     .logo{
         transform: translateX(43px);
         font-size: 20px;
-        color: #183B56;
+        color: $white;
         span{
             font-size: 12px;
         }
@@ -49,7 +51,7 @@
         left: 18px;
         span{
             height: 3px;
-            background: #183B56;
+            background: $white;
             border-radius: 3px;
             display: block;
             transition: .2s;
@@ -57,14 +59,6 @@
             transform: translateX(-9px) rotate(0deg);
             text-align: center;
             transform-origin: center center;  
-        }
-        .upper-span{
-            width: 14px;
-        }
-        .center-span{
-            width: 18px;
-        }
-        .lower-span{
             width: 23px;
         }
         &.click{
@@ -93,21 +87,6 @@
         opacity: 0;
         pointer-events: none;
         display: unset;
-        .sidebar-bottom-img{
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            img{
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%) translateY(-48px);
-                bottom: 0;
-                width: 100px;
-                height: auto;
-            }
-        }
         .sidebar-ul{
             position: relative;
             width: 100%;
@@ -134,11 +113,12 @@
                             display: flex;
                             border-right: 1px solid lightgray;
                             p{
-                                color: #082133;
+                                color: $txt;
                                 display: inline-block;
                                 text-decoration: none;
-                                font-weight: 800;
-                                font-size: 14.5px;
+                                font-weight: 500;
+                                font-size: 14px;
+                                opacity: 0.9;
                                 transform:  translateX(53px);
                                 position: absolute;
                                 padding: 19px 0;
@@ -176,11 +156,12 @@
                             display: flex;
                             border-right: 1px solid lightgray;
                             p{
-                                color: #082133;
+                                color: $txt;
                                 display: inline-block;
                                 text-decoration: none;
-                                font-weight: 800;
-                                font-size: 14.6px;
+                                font-weight: 500;
+                                font-size: 14px;
+                                opacity: 0.9;
                                 transform:  translateX(60px);
                                 position: absolute;
                                 padding: 19px 0;
@@ -207,16 +188,16 @@
                     }
                 }
                 a{
-                    color: #082133;
+                    color: $txt;
                     display: inline-block;
                     text-decoration: none;
                     width: 100%;
                     height: 100%;
-                    font-weight: 800;
-                    font-size: 14.6px;
+                    font-weight: 500;
+                    font-size: 15px;
                     padding: 19px 0;
                     padding-left: 25px;
-                    cursor: pointer;
+                    opacity: 0.9;
                     &:active{
                         background: #d5edff9a;
                     }
@@ -231,7 +212,7 @@
                         left: 0;
                     }
                     i{
-                        transform: translateX(-50px) translateY(5px);
+                        transform: translateX(-50px) translateY(2px);
                         font-size: 16px;
                         transition: .2s !important;
                         float: right;
@@ -280,6 +261,7 @@
             width: 29px;
             height: auto;
             margin-left: 10px;
+            color: $white;
         }
         span{
             padding: 0;
@@ -291,12 +273,12 @@
             right: 10px;
             top: 10px;
             padding: 4px 8px;
-            background: #183B56;
+            background: $white;
             border-radius: 100%;
-            color: white;
+            color: $txt;
         }
         i{
-            color: #183B56;
+            color: $white;
             font-size: 23px;
             margin-right: 5px;
             &#searcIcon{

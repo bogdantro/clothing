@@ -1,14 +1,11 @@
 from django.contrib import admin
 from django.urls import path
 from apps.core.views import *
-from apps.blog.views import *
 from apps.cart.views import *
-from apps.newsletter.views import *
 from apps.order.views import *
 from apps.store.views import *
 from apps.userprofile.views import *
 from django.conf.urls.static import *
-from apps.newsletter.api import *
 from apps.store.api import *
 from apps.cart.webhook import *
 from apps.userprofile.views import *
@@ -37,7 +34,6 @@ urlpatterns = [
     #API
     path('api/add_to_cart/', api_add_to_cart, name='api_add_to_cart'),
     path('api/add_to_cart_bundle/', api_add_to_cart_bundle, name='api_add_to_cart_bundle'),
-    path('api/add_subscriber/', api_add_subscriber, name='api_add_subscriber'),
     path('api/can_use/', api_can_use, name='api_can_use'),
     path('api/create_checkout_session/', create_checkout_session, name='create_checkout_session'),
     path('api/remove_from_cart/', api_remove_from_cart, name='api_remove_from_cart'),

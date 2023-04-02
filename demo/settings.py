@@ -50,10 +50,8 @@ if DEBUG == True:
         'apps.core',
         'apps.order',
         'apps.store',
-        'apps.blog',
         'apps.cart',
         'apps.userprofile',
-        'apps.newsletter', 
     ]
 
     MIDDLEWARE = [
