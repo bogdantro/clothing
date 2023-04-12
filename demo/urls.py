@@ -17,7 +17,7 @@ from .sitemaps import *
 sitemaps = {'static': StaticViewSitemap, 'product': ProductSitemap, 'category': CategorySitemap}
 
 urlpatterns = [
-    path('admin-stellcare/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('admin-stellcare/admin_order_pdf/<int:order_id>/', admin_order_pdf, name='admin_order_pdf'),
 
     path('', home, name='home'),

@@ -17,10 +17,13 @@
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
 
 
+<div class="top-header">
+    Free shipping on orders above £67
+</div>
 <div id="mobileNav">
     <!-- logo -->
     <div class="logo" onclick="window.location.href='/'">
-        Clothing <span>Store</span>
+        Neraless
     </div>
     <!-- hamburger -->
     <div class="hamburger" id="hamburger" onclick="menu()">
@@ -33,21 +36,24 @@
         <ul class="sidebar-ul">
             <li class="sidebar-li" id="sidebarLi">
                 <div class="help-dropdown">
+                    <a href="/vårt-arbeid">Shop</a>
                     <a href="/vårt-arbeid">About us</a>
-                    <a onclick="help()" id="helpToggle">Help<i class="fas fa-sort-down"></i></a>
+                    <a onclick="help()" id="helpToggle">Customer service<i class="fas fa-sort-down"></i></a>
                     <div class="help-dropdown-links" id="helpDropdown">
+                        <div class="nav-link-parent">
+                            <a href="/om-webiser">Contact us</a>
+                        </div>
                         <div class="nav-link-parent">
                             <a href="/om-webiser">Refunds</a>
                         </div>
                         <div class="nav-link-parent">
-                            <a href="/blogg">Policy</a>
+                            <a href="/blogg">Privacy Policy</a>
                         </div>
                         <div class="nav-link-parent">
                             <a href="/sosiale-medier">Terms of service</a>
                         </div>
                     </div>
                 </div>
-                <a href="/kontakt-oss">Contact</a>
                 <div class="sidebar-myaccount">
                     {% if request.user.is_authenticated %}
                     <div class="user-is-login">

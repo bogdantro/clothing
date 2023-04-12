@@ -8,87 +8,44 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
-<!-- <div class="cover">
+<div class="cover">
    <div class="content">
-      <div class="text" id="coverText">
-         <h1>The best tool for your AirPods</h1>
-         <p class="paragraph">Lorem ipsum dolor. ntium incidunt sequi aliquid doloremque esse modi, beatae magnam reprehenderit.</p>
-      </div>
-      <div class="image" id="coverImage">
-         <img src="{% static 'images/other/cover-product-image.png' %}" alt="">
-      </div>
-      <div class="cover-actions" id="coverActions">
-         <button class="primary">Buy now</button>
-         <button class="secondary">Read more</button>
+      <div class="text">
+         <!-- <h1>Summer sale ending soo</h1> -->
       </div>
    </div>
-</div> -->
+</div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<div id="fullwidth">
-   <div id="spinnerOverlay">
-      <div id="spinnerFirst">
-         <h1>Legger til handlekurv</h1>
-         <div class="spinner"></div>
-      </div>
-      <div id="spinnerGoToCart">
-         <h1 id="spinnerH1Aftler">Lagt til handlekurv</h1>
-         <h1>Vil du gå til handlekurv?</h1>
-         <div class="buttons">
-            <button onclick="window.location.href='/handlekurv'">til handlekurv</button>
-            <button onclick="RefreshPageHome()">fosett å handle</button>
-         </div>
-      </div>
-   </div>
-   <h1>Dagens Utvalgte</h1>
-<div class="gallery">
+
+<div class="product-section">
    {% for product in featuredPr %}
-   <figure class="item">
-    <div class="img-wrap">
-       <img src="{{ product.image.url }}" alt="product-image" />
+   <div class="product" onclick="window.location.href='{% url  'product_detail' product.slug  %}'">
+      <img class="product-image" src="{{ product.image.url }}" alt="product-image" />
+      <h2 class="product-name">{{ product.name }}</h2>
+      <div class="product-price">
+         <p class="red">£{{ product.price }}</p>
+         <p>£{{ product.discount_price }}</p>
+      </div>
+      {% if product.num_available > 0 %}   
+         <p class="product-stock" class="btn-no-stock">In stock</p>
+      {% else %}
+         <p class="product-stock">Out of stock</p>
+      {% endif %}   
+   </div>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
        {% if product.is_sale %}
-       <div id="productOnSale">
           <p>salg</p>
-         </div>
          {% else %}
          {% endif %}
-   </div>
-    <figcaption class="caption">
-       <div id="productStock">
 
           {% if product.num_available > 0 %}   
           <p>På lager</p><img src="{% static '/images/other/checkmark.png' %}" width="15sspx" height="15px">
@@ -119,11 +76,9 @@
             {% endif %}   
          {% endif %}
 
-    </figcaption>
-   </figure>
+
    {% endfor %}
-</div>
-</div>
+
 
 
 <!-- <div class="cover">

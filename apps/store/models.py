@@ -30,6 +30,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     parent = models.ForeignKey('self', related_name='variants', on_delete=models.CASCADE, blank=True, null=True)
     price = models.FloatField(max_length=300, default=0)
+    discount_price = models.FloatField(max_length=300, default=0)
     slug = models.SlugField(max_length=150)
     description = models.TextField()
     short_description = models.TextField(null=True, blank=True, max_length=300)
