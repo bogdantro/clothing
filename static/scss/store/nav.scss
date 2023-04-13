@@ -20,6 +20,8 @@ $txt: #183b56;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #f3f3f3;
+    z-index: 100;
 }
 
 #mobileNav{
@@ -35,10 +37,11 @@ $txt: #183b56;
     padding-inline: 20px;
     border-bottom: 1px solid rgba(211, 211, 211, 0.68);
     &.sticky{
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.92);
     }
     &.menu{
         transition: .4s;
+        background: white;
         .icons{
             pointer-events: none;
             i{
@@ -48,22 +51,23 @@ $txt: #183b56;
     }
     &.search{
         transition: .2s;
+        background: white;
     }
     .logo{
         transform: translateX(43px);
         font-size: 20px;
         color: $black;
         position: relative;
-        &::after{
-            content: '';
-            display: block;
-            width: 70%;
-            height: 1px;
-            background: #DAA520;
-            position: absolute;
-            right: 0;
-            bottom: -3px;
-        }
+        // &::after{
+        //     content: '';
+        //     display: block;
+        //     width: 70%;
+        //     height: 1px;
+        //     background: #DAA520;
+        //     position: absolute;
+        //     right: 0;
+        //     bottom: -3px;
+        // }
     }
     .hamburger{
         padding: 10px;
@@ -317,15 +321,16 @@ $txt: #183b56;
     }
      #searchBar{
         position: absolute;
-        top: 65px;
+        top: 68px;
         left: 0;
         width: 100%;
         opacity: 0;
         pointer-events: none;
-        border-bottom: 1px solid #5a5a5a62;
+        border-bottom: 1px solid rgba(211, 211, 211, 0.68);
         padding-top: 2px;
+        box-shadow: 0 1px 3px rgba(211, 211, 211, 0.5);
         &.active{
-            top: 65px;
+            top: 68px;
             transition: .2s;
             opacity: 1;
             pointer-events: visible;

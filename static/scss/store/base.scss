@@ -6,20 +6,22 @@ $navBg : #2f3030;
 
 .cover{
     width: 100%;
-    height: 140px;
+    height: 105px;
 }
 
 .product-section{
     width: 100%;
     height: auto;
     padding: 10px 20px;
+    text-align: center;
     .product{
-        width: 45%;
+        width: 53%;
         height: auto;
         text-align: center;
+        margin: 25px auto;
         .product-image{
             width: auto;
-            height: 130px;
+            height: 145px;
             margin-bottom: 11px;
         }
         .product-name{

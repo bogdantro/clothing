@@ -62,10 +62,14 @@ function search(){
     searcIcon.classList.add('active')
     navbar.classList.add('search')
     document.getElementById("searchInput").focus();
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   }else{
     searchBar.classList.remove('active')
     searcIcon.classList.remove('active')
     navbar.classList.remove('search')
+    document.body.style.overflow = "scroll";
+    document.documentElement.style.overflow = "scroll";
   }
 }
 

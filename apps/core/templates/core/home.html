@@ -33,16 +33,7 @@
          <p class="product-stock">Out of stock</p>
       {% endif %}   
    </div>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-       {% if product.is_sale %}
+       <!-- {% if product.is_sale %}
           <p>salg</p>
          {% else %}
          {% endif %}
@@ -74,59 +65,11 @@
             {% else %}
             <a class="btn-no-stock">Produktet er ikke på lager</a>
             {% endif %}   
-         {% endif %}
+         {% endif %} -->
 
 
    {% endfor %}
-
-
-
-<!-- <div class="cover">
-   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
-      <ol class="carousel-indicators">
-         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-       </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-         <img id="coverImg" src="{% static '/images/covers/cover-1.jpg' %}">
-         <div id="coverInfo">
-            <h1 id="coverTxt">Organisk hudpleie produkter</h1>
-            <p>Ta vare på huden din</p>
-            <button id="coverBtn" onclick="window.location.href='/om'">les om oss</button>
-         </div>
-        </div>
-         
-      </div>
    </div>
-</div>
-
-<section id="lookingForSection">
-   <div id="colLeft">
-      <h1>Hva leter du etter?</h1>
-   </div>
-   <div id="colRight">
-      {% for category in featuredCat %} 
-      <a href="{% url 'category' category.slug %}">
-         <div id="categoryCard">
-            <h1>{{ category.name }}</h1>
-         </div> 
-      </a>
-      {% endfor %}
-   </div>
-</section>
-
-
-
-
-
-<div id="partnershipOne">
-   <div class="detail">
-      <h1>PARTNER NAME</h1>
-      <button>kjøp</button>
-   </div>
-   <img src="{% static '/images/covers/sponsor-demo.jpg' %}">
-</div> -->
 
 {% endblock %}
 

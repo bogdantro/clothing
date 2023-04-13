@@ -1,64 +1,27 @@
-// standard phone
-#mobileNav{
-    display: none;
-}
+$black: #1F1F1F;
+$white: rgb(246,246,246);
+$primBtn: #06c484;
+$txt: #183b56;
+$navBg : #2f3030;
+
+
 #cartapp{
     width: 100%;
     min-height: 88vh;
     padding-top: 150px;
     background: white;
     position: relative;
-    .cart-top-row{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: max-content;
-        position: absolute;
-        left: 0;
-        top: 40px;
-        padding-inline: 20px;
-        padding-block: 10px;
-        &.sticky{
-            position: fixed;
-            left: 0;
-            top: 0;
-            background: rgba(255, 255, 255, 0.98);
-        }
-        .small-paragraph{
-            font-size: 15px;
-        }
-        .go-back{
-            display: flex;
-            width: max-content;
-            padding-inline: 5px;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: 800;
-            color: #183b56c9;
-            cursor: pointer;
-            span{
-                display: block;
-                width: 42px;
-                height: 3px;
-                background: #183b56c9;
-                margin-right: 10px;
-                transform: translateY(2px);
-                border-radius: 10px;
-            }
-        }
-    }
+    padding-inline: 20px;
     .no-cart{
         text-align: center;
         img{
             display: none;
         }
         h1{
-            color: #183B56;
-            font-size: 31px;
-            font-weight: 800;
-            margin-bottom: 45px;
+            color: $black;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 35px;
         }
     }
 }

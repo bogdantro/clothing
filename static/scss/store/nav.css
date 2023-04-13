@@ -15,6 +15,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #f3f3f3;
+  z-index: 100;
 }
 
 #mobileNav {
@@ -31,10 +33,11 @@
   border-bottom: 1px solid rgba(211, 211, 211, 0.68);
 }
 #mobileNav.sticky {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
 }
 #mobileNav.menu {
   transition: 0.4s;
+  background: white;
 }
 #mobileNav.menu .icons {
   pointer-events: none;
@@ -44,22 +47,13 @@
 }
 #mobileNav.search {
   transition: 0.2s;
+  background: white;
 }
 #mobileNav .logo {
   transform: translateX(43px);
   font-size: 20px;
   color: #1F1F1F;
   position: relative;
-}
-#mobileNav .logo::after {
-  content: "";
-  display: block;
-  width: 70%;
-  height: 1px;
-  background: #DAA520;
-  position: absolute;
-  right: 0;
-  bottom: -3px;
 }
 #mobileNav .hamburger {
   padding: 10px;
@@ -310,16 +304,17 @@
 }
 #mobileNav #searchBar {
   position: absolute;
-  top: 65px;
+  top: 68px;
   left: 0;
   width: 100%;
   opacity: 0;
   pointer-events: none;
-  border-bottom: 1px solid rgba(90, 90, 90, 0.3843137255);
+  border-bottom: 1px solid rgba(211, 211, 211, 0.68);
   padding-top: 2px;
+  box-shadow: 0 1px 3px rgba(211, 211, 211, 0.5);
 }
 #mobileNav #searchBar.active {
-  top: 65px;
+  top: 68px;
   transition: 0.2s;
   opacity: 1;
   pointer-events: visible;
